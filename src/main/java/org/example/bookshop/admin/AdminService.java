@@ -28,6 +28,15 @@ public class AdminService {
     public void saveAuthor(Author author){
         authorDao.save(author);
     }
+    public List<Author> listAllAuthor(){
+        return authorDao.findAll();
+    }
+
+
+    public List<Book> listAllBooks(){
+        return bookDao.findAll();
+    }
+
     public void saveBook(Book book,int categoryId,int authorId){
         Category category= getCategory(categoryId);
         Author author = getAuthor(authorId);
@@ -40,6 +49,8 @@ public class AdminService {
         return authorDao.findById(authorId)
                 .get();
     }
+
+
 
     private Category getCategory(int categoryId) {
         return categoryDao.findById(categoryId).get();

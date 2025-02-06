@@ -17,6 +17,7 @@ public class Book extends IdClass{
     private String title;
     private double price;
     private int stock;
+    private String imageUrl;
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private LocalDate yearPublished;
     @ManyToOne
@@ -29,5 +30,14 @@ public class Book extends IdClass{
         this.price = price;
         this.stock = stock;
         this.yearPublished = yearPublished;
+    }
+
+    @Override
+    public String toString() {
+        return "Book{" +
+                "title='" + title + '\'' +
+                ", price=" + price +
+                ", stock=" + stock +
+                '}';
     }
 }
